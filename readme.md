@@ -45,6 +45,7 @@ Upload your solution to a public Git repository on your preferred platform (such
 For guidance, we recommend following a structured repository layout.
 
 Use clear commit messages and inline documentation to explain your approach.
+
 ## Evaluation Criteria
 
 | Category                   | Weight |
