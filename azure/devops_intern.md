@@ -57,7 +57,6 @@ You have joined a DevOps team as an intern. Your task is to provision infrastruc
 
 - Ensure your ACR name is lowercase and globally unique.
 - Use best practices for folder structure and code clarity.
-- Try to complete within 45 minutes.
 
 ---
 
