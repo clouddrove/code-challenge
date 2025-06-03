@@ -64,6 +64,7 @@ Please submit the following files as a zipped folder or via a GitHub repository:
 
 - Terraform code (`.tf` files)
 - App source (minimal)
+- Screen Shots for deployed resources on Azure
 - `azure-pipelines.yml`
 - `README.md`
 
