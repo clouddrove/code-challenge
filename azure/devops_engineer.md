@@ -1,7 +1,6 @@
-# 🧪 Azure DevOps Engineer Practical Test (⏱ 45 Minutes)
+# 🧪 DevOps Practical Exam: Docker + Terraform + Azure CLI
 
-## 🎯 Objective
-Automate the provisioning and deployment of a basic web application using **Terraform** and **Azure Pipelines**, simulating a real-world DevOps workflow.
+**Objective**: Automate the provisioning and deployment of a basic web application using **Terraform** and **Azure Pipelines**, simulating a real-world DevOps workflow.
 
 ---
 
@@ -16,40 +15,50 @@ You are tasked with:
 
 ## ✅ Tasks
 
-### 🔹 Task 1: Terraform Infrastructure (20 min)
+### Task 1: Terraform Infrastructure
 
-Provision the following Azure resources:
-- A **Resource Group**
-- A **Linux App Service Plan** (SKU: `B1`)
-- An **Azure Web App** (Runtime: Node.js 18(or above) or Python 3.11(or above))
+1. Provision the following Azure resources:
+   - A **Resource Group**
+   - A **Linux App Service Plan** (SKU: `B1`)
+   - An **Azure Web App** (Runtime: Node.js 18(or above) or Python 3.11(or above))
+   - Azure container registry.
 
-**Deliverables:**
-- `main.tf`, `variables.tf`, `terraform.tfvars`
+📦 **Deliverables**:
+- `main.tf`, `variables.tf`, `terraform.tfvars` , `outputs.tf`
 - Use **local state**
 - Output the Web App name or URL using Terraform output
 
 ---
 
-### 🔹 Task 2: Azure Pipeline Configuration 
+### Task 2: Dockerize a Basic App 
+
+1. Create a `Dockerfile` for a simple nodejs application. 
+2. Test it locally.
+
+📦 **Deliverable**: 
+- `Dockerfile` 
+- Screen shot for local testing. 
+---
+
+### Task 3: Azure Pipeline Configuration 
 
 Create an Azure DevOps pipeline (`azure-pipelines.yml`) that:
+  - Deploy terraform resource to azure portal. 
+  - Build Dockerfile and push it to azure acr. 
+     - Tagging should be done according to build number. 
+  - Update web app with latest image tag. 
 
-- Triggers on push to the `main` branch
-- Runs on a `ubuntu-latest` Microsoft-hosted agent
-- Contains **two stages**:
-  1. **Terraform Apply**
-     - Run `terraform init`, `plan`, and `apply`
-  2. **Application Deployment**
-     - Deploy the app to Azure Web App using:
-       - `az webapp deployment source config-zip`, or
-       - `AzureWebApp` deployment task
 
 **Requirements:**
-- Use pipeline variables (can be hardcoded or passed at top of YAML)
+- Use pipeline variables
+
+📦 **Deliverables**:
+- Pipeline Yaml
+- Screen shot for pipeline run.
 
 ---
 
-### 🔹 Task 3: Mini Documentation 
+### Task 4: Mini Documentation 
 
 Create a `README.md` that includes:
 - What the pipeline does
@@ -58,23 +67,11 @@ Create a `README.md` that includes:
 
 ---
 
-## 📦 Submission Instructions
+## 📂 Submission Checklist
 
-Please submit the following files as a zipped folder or via a GitHub repository:
-
-- Terraform code (`.tf` files)
-- App source (minimal)
-- Screen Shots for deployed resources on Azure
-- `azure-pipelines.yml`
-- `README.md`
-
-
-## 🧰 Tools Allowed
-
-- Azure CLI
-- Terraform CLI
-- VS Code or similar
-
----
-
-Good luck!
+- [ ] `Dockerfile`
+- [ ] `main.tf` , `tfvars` , `outputs.tf` , `variables.tf`
+- [ ] Screenshot of running web app and site.
+- [ ] Screenshot of `terraform apply` output
+- [ ] Azure Portal screenshots showing all resources.
+- [ ] Screen shot of successful pipeline run.
