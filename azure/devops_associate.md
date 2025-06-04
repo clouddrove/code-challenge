@@ -1,8 +1,7 @@
 # 🧪 DevOps Practical Exam: Docker + Terraform + Azure CLI
 
 **Objective**: Create a portable environment using Docker to deploy infrastructure on Azure using Terraform.
-
-**Duration**: 45–60 Minutes  
+  
 **Level**: Intermediate  
 **Tools**: Docker, Terraform, Azure CLI, Bash, Azure Account
 
