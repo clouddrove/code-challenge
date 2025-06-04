@@ -4,6 +4,8 @@
 
 Design a **production-ready architecture** for a high-traffic **.NET Core Web Application** hosted on **Azure Kubernetes Service (AKS)**. Your submission should demonstrate your expertise in infrastructure design, DevOps practices, Azure-native services, security, and high availability.
 
+**Tools**: draw.io , github-readme
+
 ---
 
 ## 🚀 Assignment Details
@@ -13,8 +15,9 @@ Design a **production-ready architecture** for a high-traffic **.NET Core Web Ap
 You have been asked to design and document the **cloud infrastructure and DevOps strategy** for deploying a .NET Core web application on Azure, using Kubernetes and other Azure-native services.
 
 ---
+## ✅ Tasks 
 
-## 📐 Architecture Components
+### 📐 Architecture Components
 
 Please address and document your approach for the following components:
 
@@ -94,11 +97,11 @@ Please address and document your approach for the following components:
    - [https://excalidraw.com/](https://excalidraw.com/)
    - [https://www.drawio.com/](https://www.drawio.com/)
 3. Add any YAML, pipeline, or Terraform examples in relevant subfolders.
-4. Push your solution to a GitHub repo or ZIP and send the link.
+4. Push your solution to a GitHub repo and send the link.
 
 ---
 
-## ✅ Bonus
+## 💡 Notes
 
 - Use diagrams to visually explain traffic flow and resource layout.
 - Attach `.drawio` or `.excalidraw` design files in the repo under `/diagrams`.
