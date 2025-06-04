@@ -1,61 +1,109 @@
+# 🧪 DevOps Practical Exam: Containerized Microservice & Terraform Infrastructure
+
+**Objective**: Build a minimal microservice, containerize it, publish the image, and provision cloud infrastructure to run it using Terraform.  
+**Level**: Intermediate  
+**Tools**: Docker, Terraform, Git, AWS
 
 ---
 
-### 1. User & Permission Management  
-Create a new Linux user `deploy`, add it to the `www-data` group, and configure its home directory with permissions that allow web-server access only to that group.  
+## 📄 Scenario
+
+You are tasked with creating a simple microservice called **SimpleTimeService**, packaging it as a Docker container, and deploying the infrastructure required to run it in the cloud. All source code and Terraform configurations must be tracked in a public repository.
 
 ---
 
-### 2. Package Installation Automation  
-Write a Bash one-liner (or short script) that installs `nginx`, ensures the service is enabled at boot, and verifies its status.  
+## ✅ Tasks
+
+### Task 1: Build and Containerize a Minimal Microservice
+
+**Service Name:** SimpleTimeService
+
+1. **Application Development**  
+   - Write a small web service in your preferred language (Go, Node.js, Python, C#, Ruby, etc.).  
+   - On HTTP GET to `/`, return a JSON payload:
+     ```json
+     {
+       "timestamp": "<current date and time>",
+       "ip": "<client IP address>"
+     }
+     ```
+2. **Dockerization**  
+   - Create a `Dockerfile` that builds and runs SimpleTimeService.  
+   - Ensure the container process runs as a non-root user.
+3. **Image Publishing**  
+   - Build the Docker image locally.  
+   - Push the image to a public container registry (e.g., Docker Hub, GitHub Container Registry).
+4. **Code Repository**  
+   - Host all application source files and the `Dockerfile` in a public Git repository (GitHub, GitLab, Bitbucket, etc.).  
+   - Verify that no sensitive data (API keys, credentials) is committed.
+
+**Suggested Repository Structure**:  
+```
+/
+├── src/                # Application source code  
+├── Dockerfile          # Container build instructions  
+└── README.md           # This file  
+```
+
 
 ---
 
-### 3. Cloud Resource Check  
-Using the AWS CLI, list all EC2 instances in the `us-east-1` region and output only their instance IDs and states.  
+### Task 2: Provision Cloud Infrastructure with Terraform
+
+Use Terraform to define and deploy the necessary AWS resources (or equivalent cloud provider) to host your containerized service. Choose one of the following options:
+
+#### Option A: Server-Based Deployment
+
+1. **Network Layout**  
+   - Create a VPC with 2 public subnets and 2 private subnets.
+2. **Compute Cluster**  
+   - Provision an ECS (Elastic Container Service) or EKS (Elastic Kubernetes Service) cluster in the VPC.  
+   - Ensure that worker nodes or ECS tasks run only in private subnets.
+3. **Load Balancing**  
+   - Deploy an Application Load Balancer (ALB) in the public subnets to route incoming traffic on port 80 (or 443) to your container service.
+
+#### Option B: Serverless Deployment
+
+1. **Network Layout**  
+   - Create a VPC with 2 public subnets and 2 private subnets.
+2. **Function as a Service**  
+   - Package your SimpleTimeService container as a Lambda-compatible image (using AWS Lambda Container Support) or use an equivalent FaaS offering.  
+   - Ensure the function runs in private subnets.
+3. **Traffic Routing**  
+   - Configure API Gateway, CloudFront, or a load balancer (e.g., ALB in Lambda mode) in public subnets to trigger your function on HTTP requests to `/`.
+
+> 💡 **Tip:** You may use Terraform Registry modules (e.g., VPC module, ECS/EKS module) to accelerate your configuration.
 
 ---
 
-### 4. Log File Analysis  
-Tail the last 50 lines of `/var/log/syslog`, filter entries containing “error” (case-insensitive), and count how many such entries occurred in the past hour.  
+## 📂 Submission Checklist
+
+- [ ] **Repository Contents**  
+  - Source code for SimpleTimeService under `src/`.  
+  - `Dockerfile` at the repository root.  
+  - Terraform configuration files (`main.tf`, `variables.tf`, `outputs.tf`, etc.) under a `terraform/` directory.
+- [ ] **Docker Image**  
+  - Docker image successfully built and pushed to a public registry (provide image reference in your README).
+- [ ] **Terraform Code**  
+  - Complete Terraform definitions for the chosen deployment option (server-based or serverless).
+- [ ] **Usage Instructions**  
+  - Clear steps in `README.md` for:  
+    1. Cloning the repo  
+    2. Building and pushing the Docker image  
+    3. Initializing and applying Terraform  
+    4. Verifying the deployed service endpoint
+- [ ] **Cleanup Commands**  
+  - Provide Terraform destroy commands and any additional steps to remove cloud resources.
 
 ---
 
-### 5. Docker Container Deployment  
-Pull the official `nginx:latest` image, run it detached on port 8080, and show the command that verifies the container is listening on that port.  
+## 💡 Notes
+
+- Ensure that your application runs as a non-root user inside the container for better security.  
+- Tag all Terraform-managed resources with a common `Environment = "DevOpsTest"` tag to facilitate cleanup.  
+- For AWS CLI authentication inside Terraform, configure your credentials via `aws configure` or environment variables.  
+- Verify network connectivity to your container service by obtaining the ALB or API Gateway endpoint after Terraform apply.  
+- Always run `terraform plan` before `terraform apply` to review changes.  
+- Destroy resources with `terraform destroy` and remove any leftover infrastructure to avoid ongoing cloud charges.
 
 ---
-
-### 6. Web Server Configuration  
-Configure an Nginx virtual host to serve a static site from `/var/www/html/site` on domain `test.local`. Include only the essential lines of the server block.  
-
----
-
-### 7. Git Repository Setup  
-Initialize a new Git repo in `/opt/project`, create a `README.md`, commit it with message “Initial commit,” and show the log of that commit.  
-
----
-
-### 8. Service Restart Automation  
-Write an Ansible ad-hoc command that restarts the `nginx` service on all hosts in the `webservers` inventory group.  
-
----
-
-### 9. Backup & Rotation Script  
-Write (or pseudocode) a Bash script that:  
-1. Archives `/var/www` into a timestamped tarball.  
-2. Moves it to `/backups`.  
-3. Keeps only the last **7** backups, deleting older ones automatically.  
-
----
-
-### 10. DNS Troubleshooting  
-A service on `web.example.com` cannot resolve `api.example.com`. How would you trace and fix the DNS issue on a Linux host?  
-
----
-
-### 11. Firewall Rules  
-Write the `iptables` (or `ufw`) commands to allow incoming SSH (port 22) and HTTP (port 80) while blocking all other TCP traffic.  
-
----
-

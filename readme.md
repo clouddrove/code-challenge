@@ -4,11 +4,14 @@
     Welcome to the CloudDrove DevOps Challenge 🚀
 </h1>
 
-
 This challenge is designed for candidates aspiring to join the CloudDrove DevOps team. It aims to assess your proficiency with contemporary development and operations tools and practices.
+
+---
 
 ### Important Notice
 ⚠️ Cost Advisory: Executing this challenge will incur charges on your cloud account. CloudDrove will not reimburse any expenses related to this exercise. Please ensure you delete all resources post-completion to avoid unnecessary costs.
+
+---
 
 ### 🤖 AI Usage in This Challenge
 You're welcome to use AI tools to assist with this challenge. However, it's essential that your final submission meets all the specified requirements and demonstrates your understanding of the solution.
@@ -25,11 +28,13 @@ Using AI tools is acceptable, but submitting a non-functional or poorly understo
 
 Good luck!
 
+---
+
 ## Overview
 
 This repository hosts practical assessments designed to evaluate core DevOps competencies across multiple role levels. Candidates will complete tasks simulating real-world scenarios using infrastructure-as-code, CI/CD pipelines, container orchestration, and monitoring tools.
 
-## Roles & Assessment Duration
+### Roles & Assessment Duration
 
 | Role                      |
 | ------------------------- |
@@ -41,17 +46,19 @@ This repository hosts practical assessments designed to evaluate core DevOps com
 
 > Tasks are customized per role, with complexity increasing at higher levels.
 
-## Submission Guidelines
+---
+
+### Submission Guidelines
 
 Upload your solution to a public Git repository on your preferred platform (such as GitHub, GitLab, or Bitbucket).
 
 ⚠️ Important: Ensure that no sensitive data—like API keys, passwords, or secrets—is included in the repository.
 
-For guidance, we recommend following a structured repository layout.
-
 Use clear commit messages and inline documentation to explain your approach.
 
-## Evaluation Criteria
+---
+
+### Evaluation Criteria
 
 | Category                   | Weight |
 | -------------------------- | :----: |
@@ -63,6 +70,7 @@ Use clear commit messages and inline documentation to explain your approach.
 
 Evaluation is based on both technical accuracy and clarity of solutions.
 
+---
 
 ### 🌟 Bonus Points (Optional)
 This section is entirely optional—skipping it won’t impact your evaluation. But if you're looking to go above and beyond, feel free to showcase your deeper knowledge with any of the following:
