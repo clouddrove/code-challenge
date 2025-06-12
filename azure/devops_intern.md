@@ -46,7 +46,7 @@ You have joined a DevOps team as an intern. Your task is to provision infrastruc
 3. Build the Docker image and push it to ACR with a specific tag (e.g., `v1`).
 
 📦 **Deliverables**:
-- `main.tf`
+- `pipelines.yml`
 - Screenshot of **Pipeline Run**
 
 ---
@@ -55,7 +55,7 @@ You have joined a DevOps team as an intern. Your task is to provision infrastruc
 
 - [ ] `Dockerfile`
 - [ ] `main.tf`
-- [ ] `pipelines.yml`
+- [ ] `pipeline.yml`
 - [ ] Screenshot of site running on local. 
 - [ ] Screenshot of `terraform apply` output
 - [ ] Azure Portal screenshot showing the resources and image present in ACR.
